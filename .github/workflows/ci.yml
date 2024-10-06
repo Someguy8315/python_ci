@@ -16,3 +16,7 @@ jobs:
       - name: Check uv version
         run: |
           uv --version
+
+      - name: Activate python venv
+        run: |
+          uv venv
