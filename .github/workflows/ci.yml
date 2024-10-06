@@ -20,3 +20,7 @@ jobs:
       - name: Activate python venv
         run: |
           uv venv
+
+      - name: Run python script
+        run: |
+          python test.py
