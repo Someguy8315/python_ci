@@ -20,5 +20,5 @@ jobs:
       - name: Run python script
         run: |
           uv venv
-          source .venv/bin/activate
+          . .venv/bin/activate
           python test.py
