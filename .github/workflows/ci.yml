@@ -17,11 +17,8 @@ jobs:
         run: |
           uv --version
 
-      - name: Create and activate python venv
+      - name: Run python script
         run: |
           uv venv
           source .venv/bin/activate
-
-      - name: Run python script
-        run: |
           python test.py
