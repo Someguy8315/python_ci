@@ -2,6 +2,9 @@ name: Main CI Jobs
 
 on: [push, pull_request]
 
+env:
+  PYTHON_VERSION: "3.11"
+
 jobs:
   uv_setup:
     runs-on: ubuntu-latest
@@ -19,8 +22,7 @@ jobs:
 
       - name: Setup venv and python packages
         run: |
-          uv python install 3.11
-          uv venv -p 3.11
+          uv venv -p ${{ env.PYTHON_VERSION }}
           uv pip install numpy
 
       - name: Run python script
