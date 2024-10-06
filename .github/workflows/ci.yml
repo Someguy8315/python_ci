@@ -19,7 +19,8 @@ jobs:
 
       - name: Setup venv and python packages
         run: |
-          uv venv
+          uv python install 3.11
+          uv venv -p 3.11
           uv pip install numpy
 
       - name: Run python script
