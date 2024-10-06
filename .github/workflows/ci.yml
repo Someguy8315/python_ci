@@ -17,8 +17,12 @@ jobs:
         run: |
           uv --version
 
-      - name: Run python script
+      - name: Activate venv
         run: |
           uv venv
-          . .venv/bin/activate
+          source .venv/bin/activate
+          echo PATH=$PATH >> $GITHUB_ENV
+
+      - name: Run python script
+        run: |
           python test.py
