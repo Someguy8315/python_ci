@@ -24,7 +24,11 @@ jobs:
       - name: Setup venv and python packages
         run: |
           uv venv -p ${{ matrix.python-version }}
-          uv pip install numpy
+          uv pip install numpy black
+
+      - name: "Run black linter"
+        run: |
+          uv run black .
 
       - name: Run python script
         run: |
